@@ -66,6 +66,7 @@
   background-color: transparent;
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .dashbutton:hover {
