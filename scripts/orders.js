@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   leftArrow.addEventListener("click", () => {
-    window.location.href = `orders?page=${page - 1}&q=${search}`;
+    window.location.href = `orders?page=${parseInt(page) - 1}&q=${search}`;
   });
 
   rightArrow.addEventListener("click", () => {
-    window.location.href = `orders?page=${page + 1}&q=${search}`;
+    window.location.href = `orders?page=${parseInt(page) + 1}&q=${search}`;
   });
 
   searchQuery.addEventListener("submit", async (event) => {
