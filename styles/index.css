@@ -1,0 +1,66 @@
+:root {
+  --primary: #f27d01;
+  --secondary: #68aa00;
+  --accent: #221e1f;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: 0.5s ease-in-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo{
+    height: 60px;
+    width: 60px;
+}
+
+.input{
+    font-size: medium;
+    border: 1px solid grey;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 7px 14px;
+}
+
+.button{
+    font-size: medium;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 7px 14px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.input:focus{
+    border-color: var(--primary);
+}
+
+.button:hover{
+    background-color: var(--secondary);
+}
+
+@media (max-width: 768px){
+  body{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

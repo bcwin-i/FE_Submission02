@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freddy's</title>
+    <link rel="icon" href="assets/images/logo.svg" />
+
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <script src="scripts/index.js"></script>
+    <script src="scripts/dashboard.js"></script>
+  </head>
+  <body>
+    <!-- Navigation section -->
+    <div class="sidebar">
+      <img alt="logo" src="assets/images/logo.svg" class="logo" />
+      <a class="dashbutton" href="/dashboard">Dashboard</a>
+      <a class="dashbutton" href="/orders">Orders</a>
+      <button class="dashbutton" id="logoutUser1">Logout</button>
+    </div>
+
+    <div class="topbar">
+      <img
+        alt="logo"
+        src="assets/images/logo.svg"
+        class="logo"
+        height="25px"
+        width="25px"
+      />
+      <button class="buttonRaw" id="showSideNav" name="menu">
+        <img
+          alt="logo"
+          src="assets//images/menu.png"
+          height="25px"
+          width="25px"
+        />
+      </button>
+    </div>
+
+    <div class="dropNav" id="dropNav">
+      <div class="dropNavTop">
+        <img
+          alt="logo"
+          src="assets/images/logo.svg"
+          class="logo"
+          height="10"
+          width="10"
+        />
+        <button
+          class="buttonRaw"
+          style="color: white; width: min-content"
+          id="hideSideNav"
+          name="close"
+        >
+          <img
+            alt="logo"
+            src="assets//images/close.png"
+            height="20px"
+            width="20px"
+          />
+        </button>
+      </div>
+      <a class="dashbutton" href="/dashboard">Dashboard</a>
+      <a class="dashbutton" href="/orders">Orders</a>
+      <button class="dashbutton" id="logoutUser">Logout</button>
+    </div>
+
+    <!-- WorkArea section -->
+    <div class="workArea">
+      <h5 class="sectionTitle">
+        Dashboard
+        <span style="color: red; margin-left: 5px" id="dashError"> </span>
+        <img
+          alt="logo"
+          src="/assets/images/loader.gif"
+          height="20px"
+          width="20px"
+          id="dashloader"
+          style="margin-left: 10px"
+        />
+      </h5>
+      <div class="cardsWrapper">
+        <div class="cards">
+          <p class="cardDate">Today</p>
+          <h5 id="cardCard1"></h5>
+        </div>
+        <div class="cards">
+          <p class="cardDate">Last Week</p>
+          <h5 id="cardCard2"></h5>
+        </div>
+        <div class="cards">
+          <p class="cardDate">Last Month</p>
+          <h5 id="cardCard3"></h5>
+        </div>
+      </div>
+      <h5 class="sectionTitle">
+        <span class="sectionTitleSpace" id="revSectionTitle"
+          >Revenue (Last 7 days)</span
+        >
+        <label class="switch">
+          <input type="checkbox" id="revenueSwitch" />
+          <span class="slider round"></span>
+        </label>
+      </h5>
+      <div class="revenueGraphContainer" id="revenueContainer">
+        <!-- <span class="revenueGraph" style="height: 75%"></span>
+        <span class="revenueGraph" style="height: 63%"></span> -->
+      </div>
+      <div class="revenueDaysContainer" id="revenueDaysContainer">
+        <!-- <span class="textRotation">today</span>
+        <span class="textRotation">yesterday</span> -->
+      </div>
+      <h5 class="sectionTitle" style="margin-top: 20px">Bestsellers</h5>
+      <div class="revenueTableContainer">
+        <table id="bestSellerTable">
+          <tr style="border-bottom: 1px solid #8e8e8e">
+            <th class="col1">Product name</th>
+            <th class="col2">Price</th>
+            <th class="col3"># Units Sold</th>
+            <th class="col4">Revenue</th>
+          </tr>
+          <!-- <tr>
+            <td class="col1">
+              Cartoon Network Studios Lime Flower Youngberry Gummies
+            </td>
+            <td class="col2"></td>
+            <td class="col3">6178</td>
+            <td class="col4">2835702</td>
+          </tr> -->
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
