@@ -61,5 +61,6 @@ body {
 @media (max-width: 768px){
   body{
     flex-direction: column;
+    justify-content: flex-start;
   }
 }
