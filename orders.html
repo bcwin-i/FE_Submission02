@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freddy's</title>
+    <link rel="icon" href="assets/images/logo.svg" />
+
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <script src="scripts/index.js"></script>
+    <script src="scripts/orders.js"></script>
+  </head>
+  <body>
+    <!-- Navigation section -->
+    <div class="sidebar">
+      <img src="assets/images/logo.svg" class="logo" />
+      <button class="dashbutton">Dashboard</button>
+      <button class="dashbutton">Orders</button>
+      <button class="dashbutton">Logout</button>
+    </div>
+
+    <div class="topbar">
+      <img
+        src="assets/images/logo.svg"
+        class="logo"
+        height="25px"
+        width="25px"
+      />
+      <button class="buttonRaw" id="showSideNav">
+        <img src="assets//images/menu.png" height="25px" width="25px" />
+      </button>
+    </div>
+
+    <div class="dropNav" id="dropNav">
+      <div class="dropNavTop">
+        <img src="assets/images/logo.svg" class="logo" height="10" width="10" />
+        <button
+          class="buttonRaw"
+          style="color: white; width: min-content"
+          id="hideSideNav"
+        >
+          <img src="assets//images/close.png" height="20px" width="20px" />
+        </button>
+      </div>
+      <button class="dashbutton">Dashboard</button>
+      <button class="dashbutton">Orders</button>
+      <button class="dashbutton">Logout</button>
+    </div>
+
+    <!-- WorkArea section -->
+    <div class="workArea">
+      <h5 class="sectionTitle" style="margin-bottom: 10px">
+        Oders
+        <div style="flex: 1"></div>
+        <img src="assets/images/search.png" class="searchIcon" />
+        <input
+          type="text"
+          class="input"
+          placeholder="search"
+          style="margin: 0 0 0 10px"
+        />
+      </h5>
+      <div class="revenueTableContainer">
+        <table id="orderTable">
+          <tr>
+            <th class="col1">Product name</th>
+            <th class="col2">Date</th>
+            <th class="col3">Price</th>
+            <th class="col4">Status</th>
+          </tr>
+          <!-- <tr>
+            <td class="col1">
+              Cartoon Network Studios Lime Flower Youngberry Gummies
+            </td>
+            <td class="col2"></td>
+            <td class="col3">6178</td>
+            <td class="col4">2835702</td>
+          </tr> -->
+        </table>
+      </div>
+      <p style="font-weight: bold; display: flex; align-items: center">
+        <button class="buttonRaw">
+          <img src="assets//images/left.png" height="20px" width="20px" />
+        </button>
+        <span id="paginarionLabel"></span>
+        <button class="buttonRaw">
+          <img src="assets//images/right.png" height="20px" width="20px" />
+        </button>
+      </p>
+    </div>
+  </body>
+</html>
