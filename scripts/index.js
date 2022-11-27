@@ -54,7 +54,7 @@ async function checkLogin() {
     }
   } else {
     if (!token && refresh) refreshToken();
-    if(token && refresh) {
+    if (token && refresh) {
       if (page === "" || page === "index" || page === "index.html") {
         window.location.href = "dashboard";
         return;
@@ -103,6 +103,12 @@ function deleteCookie(name) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
+function logUserOut() {
+  deleteCookie("getiToken");
+  deleteCookie("getiTokenRef");
+  window.location.replace("");
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
   checkLogin();
   const dropShow = getElementById("showSideNav");
@@ -110,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const dropNav = getElementById("dropNav");
   const loginUser = getElementById("loginUser");
   const logoutUser = getElementById("logoutUser");
+  const logoutUser1 = getElementById("logoutUser1");
 
   if (dropShow && dropHide) {
     dropShow.addEventListener("click", (e) => {
@@ -136,7 +143,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       const button = event.target[2];
       const error = getElementById("errorHandler");
 
-      error.innerHTML = "";
+      error.innerHTML = `<img
+      alt="logo"
+      src="/assets/images/loader.gif"
+      height="20px"
+      width="20px"
+      id="dashloader"
+      style="margin-left: 10px"
+    />`;
       button.disabled = true;
       const req = await request({
         url: "login",
@@ -156,11 +170,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
-  if (logoutUser) {
+  if (logoutUser || logoutUser1) {
     logoutUser.addEventListener("click", () => {
-      deleteCookie("getiToken");
-      deleteCookie("getiTokenRef");
-      window.location.replace("")
+      logUserOut();
+    });
+    logoutUser1.addEventListener("click", () => {
+      logUserOut();
     });
   }
 });

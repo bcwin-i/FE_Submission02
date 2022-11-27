@@ -20,6 +20,6 @@
 @media (max-width: 768px) {
     .loginForm{
         width: 95%;
-        margin: 0 2.5%;
+        margin: -10% 0 0 2.5%;
     }
 }
