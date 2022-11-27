@@ -45,7 +45,7 @@ async function checkLogin() {
   const token = await getCookie("getiToken");
   const refresh = await getCookie("getiTokenRef");
 
-  console.log({ page, token, refresh });
+  // console.log({ page});
   if (!token && !refresh) {
     if (page !== "" && page !== "index" && page !== "index.html") {
       // console.log("To index")
@@ -54,8 +54,8 @@ async function checkLogin() {
     }
   } else {
     if (!token && refresh) refreshToken();
-    else {
-      if (page === "" && page === "index" && page === "index.html") {
+    if(token && refresh) {
+      if (page === "" || page === "index" || page === "index.html") {
         window.location.href = "dashboard";
         return;
       }
@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const dropNav = getElementById("dropNav");
   const loginUser = getElementById("loginUser");
   const logoutUser = getElementById("logoutUser");
-  // console.log(dropShow, dropHide);
 
   if (dropShow && dropHide) {
     dropShow.addEventListener("click", (e) => {
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         obj: { username: name, password },
       });
 
-      console.log(req);
+      // console.log(req);
       if (!req.status) {
         error.innerHTML = req.data.msg;
         button.disabled = false;
@@ -161,8 +160,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     logoutUser.addEventListener("click", () => {
       deleteCookie("getiToken");
       deleteCookie("getiTokenRef");
-      browser.history.deleteAll();
-      window.location.href = "";
+      window.location.replace("")
     });
   }
 });

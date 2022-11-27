@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   let query = params;
-  console.log("Query", { page: query.page, search: query.q });
+  // console.log("Query", { page: query.page, search: query.q });
   let page = query.page || 1;
   let search = query.q || "";
   let size = 20;
@@ -74,7 +74,7 @@ function dateFormat(date) {
 
 function displayBestSeller(orders) {
   const constainer = getElementById("orderTable");
-  console.log("Orders: ", orders.length);
+  // console.log("Orders: ", orders.length);
   let rows = "";
   if (constainer)
     orders.map(
